@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Rockview Gym Digital System - Proposal by MERTSCRIPT NIG LTD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
@@ -26,7 +26,6 @@
             padding: 0 15px;
         }
 
-        /* Proposal Badge */
         .proposal-badge {
             position: fixed;
             top: 20px;
@@ -48,7 +47,6 @@
             100% { transform: scale(1); }
         }
 
-        /* MERTSCRIPT Branding */
         .mertscript-brand {
             position: fixed;
             top: 20px;
@@ -63,7 +61,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        /* Header */
         header {
             background: #ffffff;
             padding: 30px 0;
@@ -104,6 +101,7 @@
             display: inline-block;
             position: relative;
             overflow: hidden;
+            white-space: nowrap;
         }
 
         .header-btn:hover {
@@ -127,7 +125,6 @@
             left: 100%;
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(52, 52, 52, 0.7), rgba(52, 52, 52, 0.7)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23373737" width="1200" height="600"/></svg>');
@@ -241,7 +238,6 @@
             left: 100%;
         }
 
-        /* Section Heading */
         .section-heading {
             text-align: center;
             margin-bottom: 60px;
@@ -301,7 +297,6 @@
             letter-spacing: 2px;
         }
 
-        /* Problem Section */
         .problem-section {
             padding: 123px 0 119px;
             background: #fafafa;
@@ -363,10 +358,9 @@
             background: linear-gradient(transparent, rgba(0,0,0,0.1));
         }
 
-        /* Slideshow Section - UPDATED for wider cards */
         .slideshow-section {
             position: relative;
-            height: 700px;
+            min-height: 700px;
             overflow: hidden;
             background: #343434;
         }
@@ -375,6 +369,7 @@
             position: relative;
             width: 100%;
             height: 100%;
+            min-height: 700px;
         }
 
         .slideshow {
@@ -389,14 +384,16 @@
             left: 0;
             width: 100%;
             height: 100%;
+            min-height: 700px;
             opacity: 0;
             transition: opacity 1s ease-in-out;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect */
+            background-attachment: scroll;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 80px 20px 80px;
         }
 
         .slide::before {
@@ -420,7 +417,7 @@
             color: white;
             max-width: 1200px;
             width: 100%;
-            padding: 0 40px;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
@@ -470,6 +467,7 @@
             color: #b9a271;
             margin-right: 10px;
             margin-top: 3px;
+            flex-shrink: 0;
         }
 
         .slide-image {
@@ -482,7 +480,7 @@
             align-items: center;
             justify-content: center;
             background: #2a2a2a;
-            width: 100%; /* Ensure full width */
+            width: 100%;
         }
 
         .slide-image img {
@@ -491,10 +489,9 @@
             object-fit: cover;
         }
 
-        /* Slideshow Navigation */
         .slideshow-nav {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 0;
             width: 100%;
             display: flex;
@@ -521,7 +518,6 @@
             background: rgba(185, 162, 113, 0.7);
         }
 
-        /* Slideshow Arrows */
         .slideshow-arrow {
             position: absolute;
             top: 50%;
@@ -554,7 +550,6 @@
             right: 30px;
         }
 
-        /* Solution Section */
         .solution-section {
             padding: 123px 0 119px;
         }
@@ -567,7 +562,7 @@
         }
 
         .feature-card {
-            background: rgba(52, 52, 52, 0.8); /* Dark glassy background */
+            background: rgba(52, 52, 52, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 40px 30px;
@@ -626,7 +621,6 @@
             line-height: 1.6;
         }
 
-        /* Phase 2 Section */
         .phase2-section {
             padding: 123px 0 119px;
             background: linear-gradient(135deg, #373737 0%, #343434 100%);
@@ -736,7 +730,6 @@
             margin-bottom: 10px;
         }
 
-        /* Prototype Section - UPDATED for bigger titles and better mobile optimization */
         .prototype-section {
             padding: 123px 0 119px;
             background: #fafafa;
@@ -750,9 +743,9 @@
         }
 
         .prototype-item {
-            background: rgba(52, 52, 52, 0.8); /* Dark glassy background */
+            background: rgba(52, 52, 52, 0.8);
             backdrop-filter: blur(10px);
-            height: 450px; /* Increased height */
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -767,20 +760,20 @@
         }
 
         .prototype-item::before {
-            content: attr(data-title); /* Dynamic title from data attribute */
+            content: attr(data-title);
             position: absolute;
-            top: 20px;
+            top: 0;
             left: 0;
             width: 100%;
             text-align: center;
-            font-weight: 700; /* Increased font weight for better readability */
-            color: #b9a271;
-            font-size: 20px; /* Increased font size for better readability */
-            z-index: 3; /* Increased z-index to appear above image */
-            background: rgba(255, 255, 255, 0.95); /* Slightly more opaque for better contrast */
-            padding: 12px 0; /* Increased padding for better spacing */
+            font-weight: 700;
+            color: #343434;
+            font-size: 18px;
+            z-index: 3;
+            background: rgba(185, 162, 113, 0.95);
+            padding: 15px 10px;
             backdrop-filter: blur(5px);
-            letter-spacing: 0.5px; /* Added letter spacing for better readability */
+            letter-spacing: 0.5px;
         }
 
         .prototype-item::after {
@@ -816,7 +809,8 @@
         .prototype-item .mobile-frame {
             position: absolute;
             width: 85%;
-            height: 90%;
+            height: calc(100% - 70px);
+            top: 60px;
             background: white;
             border-radius: 20px;
             overflow: hidden;
@@ -824,16 +818,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            top: 60px; /* Increased top positioning to avoid title overlap */
         }
 
         .prototype-item .mobile-frame img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Changed to cover for better cropping */
+            object-fit: contain;
         }
 
-        /* ROI Section */
         .roi-section {
             padding: 123px 0 119px;
         }
@@ -848,7 +840,7 @@
         .roi-card {
             text-align: center;
             padding: 40px 20px;
-            background: rgba(52, 52, 52, 0.8); /* Dark glassy background */
+            background: rgba(52, 52, 52, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
@@ -903,7 +895,6 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* CTA Section */
         .cta-section {
             padding: 123px 0 119px;
             background: #b9a271;
@@ -979,7 +970,6 @@
             left: 100%;
         }
 
-        /* Footer */
         footer {
             background: #373737;
             color: #ffffff;
@@ -1006,12 +996,16 @@
         .contact-info {
             margin-top: 20px;
             font-size: 16px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 20px;
         }
 
         .contact-info a {
             color: #ffffff;
-            margin: 0 15px;
             transition: all 0.3s;
+            white-space: nowrap;
         }
 
         .contact-info a:hover {
@@ -1026,7 +1020,6 @@
             color: #b9a271;
         }
 
-        /* Modal - UPDATED for zoom functionality */
         .modal {
             display: none;
             position: fixed;
@@ -1040,7 +1033,7 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s;
-            overflow: auto; /* Make modal scrollable */
+            overflow: hidden;
         }
 
         .modal.active {
@@ -1048,23 +1041,34 @@
             opacity: 1;
         }
 
+        .modal-wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
         .modal-content {
-            max-width: 95%;
-            max-height: 95%;
+            max-width: 90%;
+            max-height: 90%;
             position: relative;
             transform: scale(0.8);
             transition: transform 0.3s;
-            cursor: zoom-in;
+            touch-action: pinch-zoom;
         }
 
         .modal.active .modal-content {
             transform: scale(1);
         }
 
-        .modal-content.zoomed {
-            cursor: zoom-out;
-            transform: scale(1.5);
-            transition: transform 0.3s ease;
+        .modal-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
         }
 
         .modal-close {
@@ -1120,7 +1124,6 @@
             transform: scale(1.1);
         }
         
-        /* Scroll animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -1132,7 +1135,6 @@
             transform: translateY(0);
         }
 
-        /* Responsive - UPDATED for better mobile optimization */
         @media (max-width: 1024px) {
             .features-grid,
             .prototype-grid {
@@ -1159,24 +1161,45 @@
             }
 
             .prototype-item {
-                height: 400px;
+                height: 450px;
             }
         }
 
         @media (max-width: 767px) {
-            .proposal-badge, .mertscript-brand {
+            .proposal-badge {
                 top: 10px;
-                font-size: 12px;
-                padding: 6px 12px;
+                right: 10px;
+                font-size: 11px;
+                padding: 6px 10px;
+                z-index: 1002;
             }
             
             .mertscript-brand {
+                top: 50px;
                 left: 10px;
+                font-size: 11px;
+                padding: 6px 10px;
+                z-index: 1002;
+            }
+            
+            header {
+                padding: 20px 0;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
             }
             
             .logo img {
-                width: 130px;
-                height: 41px;
+                width: 180px;
+                height: 50px;
+            }
+
+            .header-btn {
+                padding: 12px 25px;
+                font-size: 12px;
             }
 
             .hero,
@@ -1186,19 +1209,30 @@
             .prototype-section,
             .roi-section,
             .cta-section {
-                padding: 50px 0 45px;
+                padding: 60px 0 50px;
+            }
+
+            .hero-subtitle {
+                font-size: 12px;
+                letter-spacing: 1px;
             }
 
             .hero-title {
-                font-size: 32px;
+                font-size: 26px;
+                line-height: 1.3;
             }
 
             .hero-description {
-                font-size: 16px;
+                font-size: 14px;
+                line-height: 1.5;
             }
 
             .section-title {
-                font-size: 28px;
+                font-size: 24px;
+            }
+
+            .section-subtitle {
+                font-size: 12px;
             }
 
             .problem-content {
@@ -1206,98 +1240,193 @@
                 gap: 30px;
             }
 
+            .problem-text h3 {
+                font-size: 24px;
+            }
+
+            .problem-image {
+                height: 300px;
+            }
+
             .features-grid,
             .prototype-grid,
             .roi-grid,
             .phase2-features {
                 grid-template-columns: 1fr;
-            }
-
-            .header-btn {
-                padding: 12px 25px;
-                font-size: 12px;
+                gap: 20px;
             }
 
             .btn-primary,
             .btn-secondary {
                 padding: 15px 30px;
-                font-size: 14px;
+                font-size: 13px;
+                margin: 8px;
             }
             
-            /* UPDATED: Bigger and more readable card titles on mobile */
-            .prototype-item::before {
-                font-size: 18px; /* Increased font size for mobile */
-                font-weight: 700; /* Increased font weight for better readability */
-                padding: 15px 0; /* Increased padding for better spacing */
-                letter-spacing: 0.5px; /* Added letter spacing for better readability */
-            }
-
-            .prototype-item {
-                height: 350px;
-            }
-
-            /* Slideshow responsive */
             .slideshow-section {
-                height: 600px;
+                min-height: auto;
+                height: auto;
+            }
+
+            .slideshow-container {
+                min-height: auto;
+                height: auto;
+            }
+            
+            .slide {
+                min-height: auto;
+                height: auto;
+                padding: 100px 15px 100px;
+                position: relative;
             }
             
             .slide-content {
-                padding: 0 20px;
-                gap: 30px;
+                padding: 0 10px;
+                gap: 25px;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .slide-text {
+                padding-right: 0;
             }
             
             .slide-text h3 {
-                font-size: 28px;
+                font-size: 22px;
+                margin-bottom: 15px;
+                letter-spacing: 1px;
             }
             
             .slide-text p {
-                font-size: 16px;
+                font-size: 14px;
+                margin-bottom: 20px;
+                line-height: 1.5;
+            }
+
+            .slide-features li {
+                font-size: 13px;
+                margin-bottom: 10px;
             }
             
             .slide-image {
-                height: 250px;
-                width: 100%; /* Ensure full width on mobile */
+                height: 280px;
+                width: 100%;
+                margin: 0 auto;
             }
             
             .slideshow-arrow {
                 width: 40px;
                 height: 40px;
-                font-size: 16px;
+                font-size: 14px;
             }
             
             .slideshow-arrow.prev {
-                left: 15px;
+                left: 10px;
             }
             
             .slideshow-arrow.next {
-                right: 15px;
+                right: 10px;
             }
 
-            .modal-content.zoomed {
-                transform: scale(1.2);
+            .slideshow-nav {
+                bottom: 15px;
+                gap: 8px;
             }
-            
-            /* UPDATED: Problem image optimization for mobile */
-            .problem-image {
-                height: 300px;
+
+            .dot {
+                width: 10px;
+                height: 10px;
             }
-            
-            .problem-image img {
+
+            .prototype-item {
+                height: 450px;
+            }
+
+            .prototype-item::before {
+                font-size: 16px;
+                font-weight: 700;
+                padding: 12px 8px;
+                letter-spacing: 0.3px;
+            }
+
+            .prototype-item .mobile-frame {
+                height: calc(100% - 60px);
+                top: 50px;
+                width: 90%;
+            }
+
+            .modal-content {
+                max-width: 95%;
+                max-height: 95%;
+            }
+
+            .modal-content img {
                 width: 100%;
-                height: 100%;
-                object-fit: contain; /* Changed to contain to fit the image properly */
+                height: auto;
+                max-height: 80vh;
+            }
+
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 45px;
+                height: 45px;
+                font-size: 28px;
+            }
+
+            .zoom-controls {
+                display: none;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .contact-info a {
+                display: block;
+                white-space: nowrap;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .cta-section p {
+                font-size: 15px;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+
+            .mertscript-footer {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-title {
+                font-size: 22px;
+            }
+
+            .slide-text h3 {
+                font-size: 18px;
+            }
+
+            .prototype-item::before {
+                font-size: 14px;
+                padding: 10px 5px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Proposal Badge -->
     <div class="proposal-badge">PROPOSAL</div>
     
-    <!-- MERTSCRIPT Branding -->
     <div class="mertscript-brand">MERTSCRIPT NIG LTD</div>
 
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -1311,7 +1440,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -1324,7 +1452,6 @@
         </div>
     </section>
 
-    <!-- Problem Section -->
     <section class="problem-section">
         <div class="container">
             <div class="section-heading">
@@ -1355,11 +1482,9 @@
         </div>
     </section>
 
-    <!-- Slideshow Section -->
     <section class="slideshow-section">
         <div class="slideshow-container">
             <div class="slideshow">
-                <!-- Slide 1: Digital Registration -->
                 <div class="slide active" style="background-image: url('images/slideshow-bg-1.jpg')">
                     <div class="slide-content">
                         <div class="slide-text">
@@ -1373,12 +1498,11 @@
                             </ul>
                         </div>
                         <div class="slide-image">
-                            <img src="images/registration-design.png" alt="Digital Registration Interface" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="images/registration-design.png" alt="Digital Registration Interface">
                         </div>
                     </div>
                 </div>
                 
-                <!-- Slide 2: Membership Management -->
                 <div class="slide" style="background-image: url('images/slideshow-bg-2.jpg')">
                     <div class="slide-content">
                         <div class="slide-text">
@@ -1392,12 +1516,11 @@
                             </ul>
                         </div>
                         <div class="slide-image">
-                            <img src="images/membership-design.png" alt="Membership Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="images/membership-design.png" alt="Membership Dashboard">
                         </div>
                     </div>
                 </div>
                 
-                <!-- Slide 3: Payment Processing -->
                 <div class="slide" style="background-image: url('images/slideshow-bg-3.jpg')">
                     <div class="slide-content">
                         <div class="slide-text">
@@ -1411,12 +1534,11 @@
                             </ul>
                         </div>
                         <div class="slide-image">
-                            <img src="images/payment-design.png" alt="Payment Interface" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="images/payment-design.png" alt="Payment Interface">
                         </div>
                     </div>
                 </div>
                 
-                <!-- Slide 4: Attendance Tracking -->
                 <div class="slide" style="background-image: url('images/slideshow-bg-4.jpg')">
                     <div class="slide-content">
                         <div class="slide-text">
@@ -1430,12 +1552,11 @@
                             </ul>
                         </div>
                         <div class="slide-image">
-                            <img src="images/attendance-design.png" alt="Check-in Interface" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="images/attendance-design.png" alt="Check-in Interface">
                         </div>
                     </div>
                 </div>
                 
-                <!-- Slide 5: Analytics Dashboard -->
                 <div class="slide" style="background-image: url('images/slideshow-bg-5.jpg')">
                     <div class="slide-content">
                         <div class="slide-text">
@@ -1449,13 +1570,12 @@
                             </ul>
                         </div>
                         <div class="slide-image">
-                            <img src="images/analytics-design.png" alt="Analytics Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="images/analytics-design.png" alt="Analytics Dashboard">
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Navigation dots -->
             <div class="slideshow-nav">
                 <span class="dot active" data-slide="0"></span>
                 <span class="dot" data-slide="1"></span>
@@ -1464,7 +1584,6 @@
                 <span class="dot" data-slide="4"></span>
             </div>
             
-            <!-- Navigation arrows -->
             <button class="slideshow-arrow prev">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -1474,7 +1593,6 @@
         </div>
     </section>
 
-    <!-- Solution Section -->
     <section class="solution-section" id="solution">
         <div class="container">
             <div class="section-heading">
@@ -1522,7 +1640,6 @@
         </div>
     </section>
 
-    <!-- Phase 2 Section -->
     <section class="phase2-section">
         <div class="container">
             <div class="section-heading">
@@ -1565,7 +1682,6 @@
         </div>
     </section>
 
-    <!-- Prototype Section - UPDATED -->
     <section class="prototype-section" id="prototype">
         <div class="container">
             <div class="section-heading">
@@ -1581,39 +1697,38 @@
             <div class="prototype-grid">
                 <div class="prototype-item animate-on-scroll" data-title="Dashboard Screen" onclick="openModal(this, 'dashboard-design.png')">
                     <div class="mobile-frame">
-                        <img src="images/dashboard-design.png" alt="Dashboard Screen" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/dashboard-design.png" alt="Dashboard Screen">
                     </div>
                 </div>
                 <div class="prototype-item animate-on-scroll" data-title="Registration Flow" onclick="openModal(this, 'registration-flow.png')">
                     <div class="mobile-frame">
-                        <img src="images/registration-flow.png" alt="Registration Flow" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/registration-flow.png" alt="Registration Flow">
                     </div>
                 </div>
                 <div class="prototype-item animate-on-scroll" data-title="Member Profile" onclick="openModal(this, 'profile-design.png')">
                     <div class="mobile-frame">
-                        <img src="images/profile-design.png" alt="Member Profile" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/profile-design.png" alt="Member Profile">
                     </div>
                 </div>
                 <div class="prototype-item animate-on-scroll" data-title="Payment Interface" onclick="openModal(this, 'payment-interface.png')">
                     <div class="mobile-frame">
-                        <img src="images/payment-interface.png" alt="Payment Interface" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/payment-interface.png" alt="Payment Interface">
                     </div>
                 </div>
                 <div class="prototype-item animate-on-scroll" data-title="Analytics Dashboard" onclick="openModal(this, 'analytics-interface.png')">
                     <div class="mobile-frame">
-                        <img src="images/analytics-interface.png" alt="Analytics Dashboard" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/analytics-interface.png" alt="Analytics Dashboard">
                     </div>
                 </div>
                 <div class="prototype-item animate-on-scroll" data-title="Hotel Booking View" onclick="openModal(this, 'hotel-booking.png')">
                     <div class="mobile-frame">
-                        <img src="images/hotel-booking.png" alt="Hotel Booking View" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="images/hotel-booking.png" alt="Hotel Booking View">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ROI Section -->
     <section class="roi-section">
         <div class="container">
             <div class="section-heading">
@@ -1651,7 +1766,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section" id="cta">
         <div class="container">
             <div class="cta-content">
@@ -1663,7 +1777,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>Proposal prepared for Rockview Hotels Limited</p>
@@ -1677,11 +1790,12 @@
         </div>
     </footer>
 
-    <!-- Modal - UPDATED with zoom controls -->
     <div class="modal" id="imageModal">
         <span class="modal-close" onclick="closeModal()">&times;</span>
-        <div class="modal-content" id="modalContent">
-            <img id="modalImage" src="" alt="Full Screen Design Preview" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        <div class="modal-wrapper">
+            <div class="modal-content" id="modalContent">
+                <img id="modalImage" src="" alt="Full Screen Design Preview">
+            </div>
         </div>
         <div class="zoom-controls">
             <button class="zoom-btn" onclick="zoomIn()">
@@ -1699,34 +1813,27 @@
     <script>
         let currentZoom = 1;
         const maxZoom = 3;
-        const minZoom = 0.5;
-        const zoomStep = 0.25;
+        const minZoom = 1;
+        const zoomStep = 0.5;
 
         function openModal(element, imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const modalContent = document.getElementById('modalContent');
             
-            // Reset zoom
             currentZoom = 1;
             modalContent.style.transform = 'scale(1)';
-            modalContent.classList.remove('zoomed');
             
-            // Set the image source for the modal
             modalImage.src = 'images/' + imageSrc;
             modalImage.alt = 'Full Screen Design Preview - ' + imageSrc;
             
             modal.classList.add('active');
-            
-            // Prevent body scrolling when modal is open
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('imageModal');
             modal.classList.remove('active');
-            
-            // Restore body scrolling
             document.body.style.overflow = '';
         }
 
@@ -1752,27 +1859,18 @@
         function updateZoom() {
             const modalContent = document.getElementById('modalContent');
             modalContent.style.transform = `scale(${currentZoom})`;
-            
-            if (currentZoom > 1) {
-                modalContent.classList.add('zoomed');
-            } else {
-                modalContent.classList.remove('zoomed');
-            }
         }
 
-        // Close modal on background click
         document.getElementById('imageModal').addEventListener('click', function(e) {
-            if (e.target === this) {
+            if (e.target === this || e.target.classList.contains('modal-wrapper')) {
                 closeModal();
             }
         });
 
-        // Prevent modal content click from closing the modal
         document.getElementById('modalContent').addEventListener('click', function(e) {
             e.stopPropagation();
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1786,7 +1884,6 @@
             });
         });
 
-        // Scroll animation
         function animateOnScroll() {
             const elements = document.querySelectorAll('.animate-on-scroll');
             
@@ -1800,12 +1897,9 @@
             });
         }
 
-        // Initial check
         window.addEventListener('load', animateOnScroll);
-        // Check on scroll
         window.addEventListener('scroll', animateOnScroll);
 
-        // Slideshow functionality
         document.addEventListener('DOMContentLoaded', function() {
             const slides = document.querySelectorAll('.slide');
             const dots = document.querySelectorAll('.dot');
@@ -1814,32 +1908,26 @@
             let currentSlide = 0;
             let slideInterval;
             
-            // Function to show a specific slide
             function showSlide(index) {
-                // Remove active class from all slides and dots
                 slides.forEach(slide => slide.classList.remove('active'));
                 dots.forEach(dot => dot.classList.remove('active'));
                 
-                // Add active class to current slide and dot
                 slides[index].classList.add('active');
                 dots[index].classList.add('active');
                 
                 currentSlide = index;
             }
             
-            // Function to show next slide
             function nextSlide() {
                 let nextIndex = (currentSlide + 1) % slides.length;
                 showSlide(nextIndex);
             }
             
-            // Function to show previous slide
             function prevSlide() {
                 let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
                 showSlide(prevIndex);
             }
             
-            // Event listeners for navigation dots
             dots.forEach(dot => {
                 dot.addEventListener('click', function() {
                     let slideIndex = parseInt(this.getAttribute('data-slide'));
@@ -1848,7 +1936,6 @@
                 });
             });
             
-            // Event listeners for navigation arrows
             prevBtn.addEventListener('click', function() {
                 prevSlide();
                 resetInterval();
@@ -1859,7 +1946,6 @@
                 resetInterval();
             });
             
-            // Auto-advance slides
             function startInterval() {
                 slideInterval = setInterval(nextSlide, 5000);
             }
@@ -1869,10 +1955,8 @@
                 startInterval();
             }
             
-            // Initialize slideshow
             startInterval();
             
-            // Pause slideshow on hover
             const slideshowContainer = document.querySelector('.slideshow-container');
             slideshowContainer.addEventListener('mouseenter', function() {
                 clearInterval(slideInterval);
@@ -1882,7 +1966,6 @@
                 startInterval();
             });
             
-            // Keyboard navigation
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'ArrowLeft') {
                     prevSlide();
